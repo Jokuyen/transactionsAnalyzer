@@ -23,6 +23,9 @@ P.S. Turns out I've spent a total of 1638.86 USD at Trader Joe's within a year r
 
 ## Code Snippets (Shortened for Concision) + Images
 
+#### Input File
+![csvFile](images/csvFile.png)
+
 #### Main Window
 ```python
 class MainWindow(tk.Tk):
@@ -73,8 +76,6 @@ def main():
     app = MainWindow()
     app.mainloop()
 ```
-![csvFile](images/csvFile.png)
-
 ![mainWindow](images/mainWindow.png)
 
 #### Display All Transactions Options
