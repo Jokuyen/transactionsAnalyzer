@@ -18,7 +18,7 @@ For example, I wanted to see how much I had spend at Trader Joe's per month. Or 
 
 Thus, this project is the result of my curiosity! 
 
-P.S. Turns out I've spent a total of 1638.86 USD at Trader Joe's within a year range with my credit card. That averages to $137 per month. Not too shabby!
+P.S. Turns out I've spent a total of 1638.86 USD at Trader Joe's within a single year range with my credit card. That averages to $137 per month. Not too shabby!
 
 #### Code Snippets (Shortened for Concision) + Images
 
