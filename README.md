@@ -1,8 +1,8 @@
 This program reads a CSV file of transaction records.
 
 Next, the user has two options in the main window: 
-1. Display all transactions in sorted order (by date, name, or cost).
-2. Display monthly spendings for a given year.
+1. Display a listbox of all transactions in sorted order (by date, name, or cost).
+2. Display monthly spendings with a graph for a given year.
 
 Within the 1st option, the user could select a sort option that displays a listbox, which has the ability to filter out any name if the user pleases.
 
