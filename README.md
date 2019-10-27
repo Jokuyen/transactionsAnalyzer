@@ -1,4 +1,4 @@
-## transactionsAnalyzer.py
+# transactionsAnalyzer.py
 This program reads a CSV file of transaction records.
 
 Next, the user has two options in the main window: 
@@ -22,6 +22,8 @@ Thus, this project is the result of my curiosity!
 P.S. Turns out I've spent a total of 1638.86 USD at Trader Joe's within a year range with my credit card. That averages to $137 per month. Not too shabby!
 
 ## Code Snippets (Shortened for Concision) + Images
+
+#### Main Window
 ```python
 class MainWindow(tk.Tk):
     def __init__(self):
@@ -75,6 +77,7 @@ def main():
 
 ![mainWindow](images/mainWindow.png)
 
+#### Display All Transactions Options
 ```python
 class TransactionOptions(tk.Toplevel):
     def __init__(self, master):
@@ -104,6 +107,7 @@ class TransactionOptions(tk.Toplevel):
 ```
 ![displayAll](images/displayAllTransactionsOptions.png)
 
+#### Monthly Spendings Window
 ```python
 class MonthlySpendings(tk.Toplevel):
     def __init__(self, master):
@@ -142,6 +146,7 @@ class MonthlySpendings(tk.Toplevel):
 
 ![monthlyPrompt](images/monthlyPromptWindow.png)
 
+#### Monthly Listbox + Graph
 ```python
 class MonthGraph(tk.Toplevel):
     def __init__(self, master, monthsDict, inputYear, listboxObj):
@@ -163,41 +168,3 @@ class MonthGraph(tk.Toplevel):
 ![monthlyListbox](images/monthlyListbox.png)
 
 ![monthlyGraph](images/monthlyGraphTJ.png)
-
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/Jokuyen/transactionsAnalyzer/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Jokuyen/transactionsAnalyzer/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
