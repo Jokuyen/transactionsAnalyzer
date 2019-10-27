@@ -113,7 +113,7 @@ class TransactionOptions(tk.Toplevel):
 ![displayAll](images/displayAllTransactionsOptions.png)
 
 
-##### Monthly Spendings Window
+##### Monthly Spendings Window (Selected from Main Window)
 ```python
 class MonthlySpendings(tk.Toplevel):
     def __init__(self, master):
