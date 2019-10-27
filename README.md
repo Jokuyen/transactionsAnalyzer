@@ -21,22 +21,7 @@ Thus, this project is the result of my curiosity!
 
 P.S. Turns out I've spent a total of 1638.86 USD at Trader Joe's within a year range with my credit card. That averages to $137 per month. Not too shabby!
 
-## Images
-![csvFile](images/csvFile.png)
-
-![mainWindow](images/mainWindow.png)
-
-![displayAll](images/displayAllTransactionsOptions.png)
-
-![monthlyWindow](images/monthlyWindow.png)
-
-![monthlyPrompt](images/monthlyPromptWindow.png)
-
-![monthlyListbox](images/monthlyListbox.png)
-
-![monthlyGraph](images/monthlyGraphTJ.png)
-
-## Code Snippets (Shortened for Concision)
+## Code Snippets (Shortened for Concision) + Images
 ```python
 class MainWindow(tk.Tk):
     def __init__(self):
@@ -86,6 +71,98 @@ def main():
     app = MainWindow()
     app.mainloop()
 ```
+![csvFile](images/csvFile.png)
+
+![mainWindow](images/mainWindow.png)
+
+```python
+class TransactionOptions(tk.Toplevel):
+    def __init__(self, master):
+        super().__init__(master)
+        self.transient(master)  
+        
+        tk.Button(self, text= "Sorted by date", command= lambda: self.transactionListByDate(master)).grid()
+        tk.Button(self, text= "Sorted by name", command= lambda: self.transactionsListByName(master)).grid()
+        tk.Button(self, text= "Sorted by cost", command= lambda: self.transactionsListByCost(master)).grid()   
+        
+    def transactionListByDate(self, master):
+        ''' Uses the master's transactions list, which is sorted by date by default '''
+        AllTransactions(master, master._transactionsList)
+        self.destroy()
+        
+    def transactionsListByName(self, master):
+        ''' Resort the master's transactions list into a new list by name'''
+        transactionsList = sorted(master._transactionsList, key= lambda record: record[master._transactionName])
+        sortedByNameObj = AllTransactions(master, transactionsList)
+        self.destroy()
+        
+    def transactionsListByCost(self, master):
+        ''' Resort the master's transactions list into a new list by cost'''
+        transactionsList = sorted(master._transactionsList, key= lambda record: float(record[master._transactionCost].strip()), reverse=True)
+        sortedByCostObj = AllTransactions(master, transactionsList)
+        self.destroy()
+```
+![displayAll](images/displayAllTransactionsOptions.png)
+
+```python
+class MonthlySpendings(tk.Toplevel):
+    def __init__(self, master):
+        super().__init__(master)
+        self.transient(master)    
+        
+        # Class variables
+        self._functionsList = [self.allTransactions, self.filteredTransactionsPrompt, self.specificTransactionPrompt]
+        # Create dictionary to track spendings for each month
+        self._monthsDict = {'January': 0.0, 'February': 0.0, 'March': 0.0, 'April': 0.0, 'May': 0.0, 'June': 0.0, 'July': 0.0, 
+                      'August': 0.0, 'September': 0.0, 'October': 0.0, 'November': 0.0, 'December': 0.0}  
+        # Sort 'transactionsList' in ascending order (so January is first instead of latest month)
+        self._transactionsList = sorted(master._transactionsList, \
+                                  key=lambda record: datetime.strptime(record[master._transactionDate], master._transactionDateFormat))     
+            
+        # User prompt for transactions options
+        inputYear = tk.IntVar()
+        tk.Label(self, text = "Enter a year: ").grid()
+        entryWidget = tk.Entry(self, textvariable=inputYear)
+        entryWidget.grid()
+
+        buttonOption = tk.IntVar()
+        allTransactionsButton = tk.Radiobutton(self, text="Show all transactions", variable=buttonOption, value=0).grid()
+        filteredTransactionButton = tk.Radiobutton(self, text="Show filtered transactions", variable=buttonOption, value=1).grid()
+        specificTransactionsButton = tk.Radiobutton(self, text="Show specific transactions", variable=buttonOption, value=2).grid()
+        confirmButton = tk.Button(self, text="Continue", command=lambda: \
+                                  self.callFunction(master, self._monthsDict, self._transactionsList, inputYear.get(), buttonOption.get())).grid()
+        
+        buttonOption.set(0)
+    
+    def callFunction(self, master, monthsDict, transactionsList, inputYear, buttonOption): 
+        ''' Call one of the three functions '''
+        self._functionsList[buttonOption](master, monthsDict, transactionsList, inputYear)
+```
+![monthlyWindow](images/monthlyWindow.png)
+
+![monthlyPrompt](images/monthlyPromptWindow.png)
+
+```python
+class MonthGraph(tk.Toplevel):
+    def __init__(self, master, monthsDict, inputYear, listboxObj):
+        super().__init__(master)    
+
+        self.title("Monthly Expenses for the Year: " + str(inputYear))
+        plt.title(str("Total: $" + "{0:.2f}".format(sum(monthsDict.values()))))
+
+        plt.bar([month for month,cost in monthsDict.items() if cost != 0], \
+                [cost for cost in monthsDict.values() if cost != 0], align="center")
+        
+        plt.xlabel("Months")
+        plt.ylabel("In Dollars")
+        
+        canvas = FigureCanvasTkAgg(fig, self)
+        canvas.get_tk_widget().pack(side="top", fill="both", expand=True)
+        canvas.draw()      
+```
+![monthlyListbox](images/monthlyListbox.png)
+
+![monthlyGraph](images/monthlyGraphTJ.png)
 
 ## Welcome to GitHub Pages
 
