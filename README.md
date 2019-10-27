@@ -7,7 +7,7 @@ Next, the user has two options in the main window:
 
 Within the 1st option, the user could select a sort option that displays a listbox, which has the ability to filter out any name if the user pleases.
 
-Within the 2nd option, the user can view a monthly graph for a given year. Options include the ability to show all transactions, filtered transactions, and specific transactions.
+Within the 2nd option, the user can view a monthly graph for a given year. Available options include showing all transactions, showing filtered transactions, or showing specific transactions.
 
 ## Origin of the Project
 While working at Trader Joe's, I wondered how much I was spending there.
