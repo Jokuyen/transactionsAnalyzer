@@ -1,4 +1,3 @@
-# transactionsAnalyzer.py
 This program reads a CSV file of transaction records.
 
 Next, the user has two options in the main window: 
