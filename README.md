@@ -10,7 +10,7 @@ Within the 1st option, the user could select a sort option that displays a listb
 Within the 2nd option, the user can view a monthly graph for a given year. Available options include showing all transactions, showing filtered transactions, or showing specific transactions.
 
 ## Origin of the Project
-Back when I was working at Trader Joe's and buying the premade lunches and groceries there, I wondered how much I was spending.
+Back when I was working at Trader Joe's—buying the premade lunches and groceries there—I wondered how much I was spending.
 
 Unfortunately, my credit card account doesn't allow the ability to analyze my transactions. (At least to my knowledge.) At best, I could scroll through the list of transactions and view each one individually. Nothing fancy.
 
