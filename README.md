@@ -8,7 +8,7 @@ Within the 1st option, the user could select a sort option that displays a listb
 
 Within the 2nd option, the user can view a monthly graph for a given year. Available options include showing all transactions, showing filtered transactions, or showing specific transactions.
 
-## Origin of the Project
+### Origin of the Project
 Back when I was working at Trader Joe's—buying the premade lunches and my daily groceries there—I wondered how much I was spending.
 
 Unfortunately, my credit card account doesn't allow the ability to analyze my transactions. (At least to my knowledge.) At best, I could scroll through the list of transactions and view each one individually. Nothing fancy.
@@ -20,15 +20,15 @@ Thus, this project is the result of my curiosity!
 
 P.S. Turns out I've spent a total of 1638.86 USD at Trader Joe's within a year range with my credit card. That averages to $137 per month. Not too shabby!
 
-## Code Snippets (Shortened for Concision) + Images
+#### Code Snippets (Shortened for Concision) + Images
 
-#### Screenshot of Input File
+###### Screenshot of Input File
 ![csvFile](images/csvFile.png)
 
-#### Input File Prompt Window (Pops up after opening program)
+###### Input File Prompt Window (Pops up after opening program)
 ![promptWindow](images/inputFile.png)
 
-#### Main Window
+###### Main Window
 ```python
 class MainWindow(tk.Tk):
     def __init__(self):
@@ -80,7 +80,7 @@ def main():
 ```
 ![mainWindow](images/mainWindow.png)
 
-#### Display All Transactions Options
+###### Display All Transactions Options
 ```python
 class TransactionOptions(tk.Toplevel):
     def __init__(self, master):
@@ -110,7 +110,7 @@ class TransactionOptions(tk.Toplevel):
 ```
 ![displayAll](images/displayAllTransactionsOptions.png)
 
-#### Monthly Spendings Window
+###### Monthly Spendings Window
 ```python
 class MonthlySpendings(tk.Toplevel):
     def __init__(self, master):
@@ -149,7 +149,7 @@ class MonthlySpendings(tk.Toplevel):
 
 ![monthlyPrompt](images/monthlyPromptWindow.png)
 
-#### Monthly Listbox + Graph
+###### Monthly Listbox + Graph
 ```python
 class MonthGraph(tk.Toplevel):
     def __init__(self, master, monthsDict, inputYear, listboxObj):
