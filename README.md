@@ -16,7 +16,7 @@ Unfortunately, my credit card account doesn't allow the ability to analyze my tr
 That wasn't good enough for me; I wanted to organize my transactions in a way that I could view my spendings holistically.
 For example, I wanted to see how much I had spend at Trader Joe's per month. Or because my parents used my credit card for the water and electric online bills, I wanted to exclude those transactions when viewing the total of my personal spendings; don't worry by the way, my parents reimbursed me for those bills.
 
-Thus, this project is the result of my curiosity! 
+Behold this project as the answer to my curiosity! 
 
 P.S. Turns out I've spent a total of 1638.86 USD at Trader Joe's within a single year range with my credit card. That averages to $137 per month. Not too shabby!
 
