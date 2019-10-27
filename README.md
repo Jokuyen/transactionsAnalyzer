@@ -22,13 +22,13 @@ P.S. Turns out I've spent a total of 1638.86 USD at Trader Joe's within a year r
 
 #### Code Snippets (Shortened for Concision) + Images
 
-###### Screenshot of Input File
+##### Screenshot of Input File
 ![csvFile](images/csvFile.png)
 
-###### Input File Prompt Window (Pops up after opening program)
+##### Input File Prompt Window (Pops up after opening program)
 ![promptWindow](images/inputFile.png)
 
-###### Main Window
+##### Main Window
 ```python
 class MainWindow(tk.Tk):
     def __init__(self):
@@ -80,7 +80,7 @@ def main():
 ```
 ![mainWindow](images/mainWindow.png)
 
-###### Display All Transactions Options
+##### Display All Transactions Options
 ```python
 class TransactionOptions(tk.Toplevel):
     def __init__(self, master):
@@ -110,7 +110,7 @@ class TransactionOptions(tk.Toplevel):
 ```
 ![displayAll](images/displayAllTransactionsOptions.png)
 
-###### Monthly Spendings Window
+##### Monthly Spendings Window
 ```python
 class MonthlySpendings(tk.Toplevel):
     def __init__(self, master):
@@ -149,7 +149,7 @@ class MonthlySpendings(tk.Toplevel):
 
 ![monthlyPrompt](images/monthlyPromptWindow.png)
 
-###### Monthly Listbox + Graph
+##### Monthly Listbox + Graph
 ```python
 class MonthGraph(tk.Toplevel):
     def __init__(self, master, monthsDict, inputYear, listboxObj):
