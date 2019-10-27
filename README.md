@@ -25,7 +25,7 @@ P.S. Turns out I've spent a total of 1638.86 USD at Trader Joe's within a year r
 
 #### Input File
 ![csvFile](images/csvFile.png)
-![promptWindow](images/inputFile)
+![promptWindow](images/inputFile.png)
 
 #### Main Window
 ```python
