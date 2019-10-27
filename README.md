@@ -1,4 +1,13 @@
-# Origin of the Project
+# transactionsAnalyzer.py
+This program reads a CSV file of transaction records. 
+
+The records are inputted into a data structure (Python's dictionary).
+
+One option is displaying a list of the records in sorted order (by date, cost, or name).
+
+The other option is selecting a year and displaying a graph of transactions pertaining to said year.
+
+## Origin of the Project
 When I used to work at Trader Joe's, I wondered to myself how much I was spending there.
 
 Unforunately, my credit card account doesn't allow the ability to analyze my transactions. (At least to my knowledge.) At best, I could scroll through the list of transactions and view each one individually. 
@@ -8,16 +17,7 @@ For example, I wanted to see how much I've spend at Trader Joe's per month, or w
 
 Thus, this project is the result of my curiosity! 
 
-# Introduction to the Project
-This program reads a CSV file of transaction records. 
-
-The records are inputted into a data structure (Python's dictionary).
-
-One option is displaying a list of the records in sorted order (by date, cost, or name).
-
-The other option is selecting a year and displaying a graph of transactions pertaining to said year.
-
-# Images
+## Images
 ![csvFile](images/csvFile.png)
 
 ![mainWindow](images/mainWindow.png)
