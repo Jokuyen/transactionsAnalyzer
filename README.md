@@ -1,21 +1,25 @@
-# transactionsAnalyzer.py
-This program reads a CSV file of transaction records. 
+## transactionsAnalyzer.py
+This program reads a CSV file of transaction records, inputting them into a list data structure.
 
-The records are inputted into a data structure (Python's dictionary).
+Next, the user has two options in the main window: 
+1. Displaying all transactions in sorted order (by date, name, or cost).
+2. Display monthly spendings for a given year
 
-One option is displaying a list of the records in sorted order (by date, cost, or name).
+Within the 1st option, the user could select a sort option that displays a listbox, which has the ability to filter out any name if the user pleases.
 
-The other option is selecting a year and displaying a graph of transactions pertaining to said year.
+Within the 2nd option, the user can view a monthly graph for a given year. Options include the ability to show all transactions, filtered transactions, and specific transactions.
 
 ## Origin of the Project
-When I used to work at Trader Joe's, I wondered to myself how much I was spending there.
+While working at Trader Joe's, I wondered how much I was spending there.
 
-Unforunately, my credit card account doesn't allow the ability to analyze my transactions. (At least to my knowledge.) At best, I could scroll through the list of transactions and view each one individually. 
+Unfortunately, my credit card account doesn't allow the ability to analyze my transactions. (At least to my knowledge.) At best, I could scroll through the list of transactions and view each one individually. Nothing fancy.
 
-That wasn't good enough for me though. I wanted to organize my transactions in a way that I could understand my spendings.
-For example, I wanted to see how much I've spend at Trader Joe's per month, or within a selected time range.
+That wasn't good enough for me; I wanted to organize my transactions in a way that I could view my spendings holistically.
+For example, I wanted to see how much I've spend at Trader Joe's per month. Or because my parents used my credit card for the water and electric online bills, I wanted to exclude those transactions when viewing my personal spendings; don't worry, they reimbursed me.
 
 Thus, this project is the result of my curiosity! 
+
+P.S. Turns out I've spent a total of 1638.86 USD at Trader Joe's within a year range with my credit card. That averages to $137 per month. Not too shabby!
 
 ## Images
 ![csvFile](images/csvFile.png)
