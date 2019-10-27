@@ -18,7 +18,7 @@ One option is displaying a list of the records in sorted order (by date, cost, o
 The other option is selecting a year and displaying a graph of transactions pertaining to said year.
 
 # Images
-!(images/csvFile.png)
+![csvFile](images/csvFile.png)
 
 ![mainWindow](images/mainWindow.png)
 
