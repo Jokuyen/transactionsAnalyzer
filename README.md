@@ -16,6 +16,9 @@ Thus, behold this project as the answer to my curiosity!
 
 (P.S. Turns out I've spent a total of 1638.86 USD at Trader Joe's within a single year range with my credit card. That averages to about $137 per month. Not too shabby!)
 
+### Core Components of the Program
+
+
 #### Code Snippets (Shortened for Concision) + Images
 
 ##### Screenshot of Input File
@@ -28,6 +31,7 @@ Note: I downloaded this csv file from my Capital One's credit card account.
 
 
 ##### Main Window
+![mainWindow](images/mainWindow.png)
 ```python
 class MainWindow(tk.Tk):
     def __init__(self):
@@ -77,10 +81,9 @@ def main():
     app = MainWindow()
     app.mainloop()
 ```
-![mainWindow](images/mainWindow.png)
-
 
 ##### Display All Transactions Options
+![displayAll](images/displayAllTransactionsOptions.png)
 ```python
 class TransactionOptions(tk.Toplevel):
     def __init__(self, master):
@@ -107,10 +110,11 @@ class TransactionOptions(tk.Toplevel):
         sortedByCostObj = AllTransactions(master, transactionsList)
         self.destroy()
 ```
-![displayAll](images/displayAllTransactionsOptions.png)
-
 
 ##### Monthly Spendings Window (Selected from Main Window)
+![monthlyWindow](images/monthlyWindow.png)
+
+![monthlyPrompt](images/monthlyPromptWindow.png)
 ```python
 class MonthlySpendings(tk.Toplevel):
     def __init__(self, master):
@@ -144,12 +148,11 @@ class MonthlySpendings(tk.Toplevel):
         ''' Call one of the three functions '''
         self._functionsList[buttonOption](master, monthsDict, transactionsList, inputYear)
 ```
-![monthlyWindow](images/monthlyWindow.png)
-
-![monthlyPrompt](images/monthlyPromptWindow.png)
-
 
 ##### Monthly Listbox + Graph
+![monthlyListbox](images/monthlyListbox.png)
+
+![monthlyGraph](images/monthlyGraphTJ.png)
 ```python
 class MonthGraph(tk.Toplevel):
     def __init__(self, master, monthsDict, inputYear, listboxObj):
@@ -168,6 +171,3 @@ class MonthGraph(tk.Toplevel):
         canvas.get_tk_widget().pack(side="top", fill="both", expand=True)
         canvas.draw()      
 ```
-![monthlyListbox](images/monthlyListbox.png)
-
-![monthlyGraph](images/monthlyGraphTJ.png)
