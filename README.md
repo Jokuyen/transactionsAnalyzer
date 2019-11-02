@@ -1,8 +1,8 @@
 This program reads a CSV file of transaction records.
 
-The user then has two options: 
-1. Display a listbox of all transactions in sorted order (by date, name, or cost).
-2. Display monthly spendings for a given year with a graph.
+Afterwards, there is the option of either displaying the transactions through a sorted list, or displaying a visual analysis of the transactions along with a sorted list.
+
+Note: The first option includes all the transactions in the csv file. The second option only allows transactions with a user-given input year. What this means is that the first option can present transactions from different years while the second option only focuses on transactions from a single given year.
 
 ### Origin of the Project
 Back when I was working at Trader Joe's—buying premade lunches and my daily groceries there—I wondered how much I was spending.
@@ -16,8 +16,22 @@ Thus, behold this project as the answer to my curiosity!
 
 (P.S. Turns out I've spent a total of 1638.86 USD at Trader Joe's within a single year range with my credit card. That averages to about $137 per month. Not too shabby!)
 
-### Core Components of the Program
+### Core Features of the Program
+The transaction records in the csv file are read into a Python list, appropiately named "transactionsList".
+Do note that since the csv file is sorted by date already, so will be "transactionsList".
 
+From the main window, the user is given 2 options:
+1. Display a listbox of all transactions in sorted order (by date, name, or cost).
+2. Display monthly spendings for a given year with a graph.
+
+In the first option, "transactionsList" is merely resorted if the user wants to organize by name or cost. Then, it is used to fill in a listbox. The user can also filter out a transaction from the listbox if they wish to; for example, I can filter out the water and electric online bills by typing in "pg&e" and "great oaks" into the prompt. (Note: The name of the filter can be partial! If I typed in "great" into the filter prompt, it would display any transactions with "great" in its name.)
+
+In the second option, a Python dictionary called "monthsDict" is created to keep track of monthly spendings; months are the keys while cost of transactions are values. 
+```python
+self._monthsDict = {'January': 0.0, 'February': 0.0, 'March': 0.0, 'April': 0.0, 'May': 0.0, 'June': 0.0, 'July': 0.0, 
+                      'August': 0.0, 'September': 0.0, 'October': 0.0, 'November': 0.0, 'December': 0.0}  
+```
+Next, the user selects a single year (e.g. 2019). Any records in "transactionsList" whose year matches the user's input year is counted into "monthsDict". Finally, when the listbox is displayed, it also shows the total spending for each month.
 
 #### Code Snippets (Shortened for Concision) + Images
 
@@ -153,6 +167,26 @@ class MonthlySpendings(tk.Toplevel):
 ![monthlyListbox](images/monthlyListbox.png)
 
 ![monthlyGraph](images/monthlyGraphTJ.png)
+```python
+class TransactionsListbox(tk.Toplevel):
+    def __init__(self, master, monthsDict, transactionsList, inputYear, userTransactionOption, filterList, removedRecords, namesList):
+        super().__init__(master)    
+        self.transient(master)               
+        
+        self.createListbox(master, transactionsList, inputYear, userTransactionOption, filterList, removedRecords, namesList)
+        
+    def createListbox(self, master, transactionsList, inputYear, userTransactionOption, filterList, removedRecords, namesList):
+        if userTransactionOption == 'specificTransaction':
+            for record in transactionsList:  
+                if datetime.strptime(record[master._transactionDate], master._transactionDateFormat).year == inputYear:
+                    for name in namesList:
+                        if name in record[master._transactionName].lower():
+                            listbox.insert(tk.END, "{:16}".format(\
+                                (datetime.strptime(record[master._transactionDate], master._transactionDateFormat)).strftime('%m/%d/%Y')) 
+                                           + "{:18}".format(str(" $" + record[master._transactionCost])) + record[master._transactionName])
+                            break
+```
+
 ```python
 class MonthGraph(tk.Toplevel):
     def __init__(self, master, monthsDict, inputYear, listboxObj):
