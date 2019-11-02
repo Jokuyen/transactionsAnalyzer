@@ -18,6 +18,7 @@ Thus, behold this project as the answer to my curiosity!
 
 ### Core Features of the Program
 The transaction records in the csv file are read into a Python list, appropiately named "transactionsList".
+
 Note: Since the csv file is sorted by date already, so is "transactionsList" by default.
 
 From the main window, the user is given 2 options:
