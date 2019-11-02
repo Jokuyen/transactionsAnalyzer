@@ -99,6 +99,10 @@ def main():
 
 ##### Display All Transactions Options
 ![displayAll](images/displayAllTransactionsOptions.png)
+
+![displayAllListbox](images/allTransactionsListbox.png)
+
+![removedTransactionsListbox](images/removedTransactions.png)
 ```python
 class TransactionOptions(tk.Toplevel):
     def __init__(self, master):
