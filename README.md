@@ -1,28 +1,25 @@
 This program reads a CSV file of transaction records.
 
-Next, the user has two options in the main window: 
+The user then has two options: 
 1. Display a listbox of all transactions in sorted order (by date, name, or cost).
-2. Display monthly spendings with a graph for a given year.
-
-Within the 1st option, the user could select a sort option that displays a listbox, which has the ability to filter out any name if the user pleases.
-
-Within the 2nd option, the user can view a monthly graph for a given year. Available options include showing all transactions, showing filtered transactions, or showing specific transactions.
+2. Display monthly spendings for a given year with a graph.
 
 ### Origin of the Project
-Back when I was working at Trader Joe's—buying the premade lunches and my daily groceries there—I wondered how much I was spending.
+Back when I was working at Trader Joe's—buying premade lunches and my daily groceries there—I wondered how much I was spending.
 
-Unfortunately, my credit card account doesn't allow the ability to analyze my transactions. (At least to my knowledge.) At best, I could scroll through the list of transactions and view each one individually. Nothing fancy.
+Unfortunately, my credit card account didn't allow the ability to analyze my transactions. (At least to my knowledge.) At best, I could scroll through the list of transactions and view each one individually. Nothing fancy.
 
 That wasn't good enough for me; I wanted to organize my transactions in a way that I could view my spendings holistically.
-For example, I wanted to see how much I had spend at Trader Joe's per month. Or because my parents used my credit card for paying the water and electric online bills, I wanted to exclude those transactions when viewing the total of my personal spendings.
+For example, I wanted to see how much I had spend at Trader Joe's per month. Or because my parents used my credit card for paying the water and electric online bills, I wanted to exclude those transactions when viewing my personal spendings.
 
 Thus, behold this project as the answer to my curiosity! 
 
-(P.S. Turns out I've spent a total of 1638.86 USD at Trader Joe's within a single year range with my credit card. That averages to $137 per month. Not too shabby!)
+(P.S. Turns out I've spent a total of 1638.86 USD at Trader Joe's within a single year range with my credit card. That averages to about $137 per month. Not too shabby!)
 
 #### Code Snippets (Shortened for Concision) + Images
 
 ##### Screenshot of Input File
+Note: I downloaded this csv file from my Capital One's credit card account.
 ![csvFile](images/csvFile.png)
 
 
