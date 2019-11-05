@@ -1,4 +1,4 @@
-This program reads a CSV file of transaction records.
+This program reads a csv file of transaction records.
 
 Afterwards, there is the option of either displaying the transactions through a sorted list, or displaying a visual analysis of the transactions along with a sorted list.
 
