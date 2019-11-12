@@ -34,18 +34,18 @@ self._monthsDict = {'January': 0.0, 'February': 0.0, 'March': 0.0, 'April': 0.0,
 ```
 Next, the user selects a single year (e.g. 2019). Any records in "transactionsList" whose year matches the user's input year is counted into "monthsDict". Finally, when the listbox is displayed, it also shows the total spending for each month.
 
-#### Code Snippets (Shortened for Concision) + Images
+### Code Snippets (Shortened for Concision) + Images
 
-##### Screenshot of Input File
+#### Screenshot of Input File
 Note: I downloaded this csv file from my Capital One's credit card account.
 ![csvFile](images/csvFile.png)
 
 
-##### Input File Prompt Window (Pops up after opening program)
+#### Input File Prompt Window (Pops up after opening program)
 ![promptWindow](images/inputFile.png)
 
 
-##### Main Window
+#### Main Window
 ![mainWindow](images/mainWindow.png)
 ```python
 class MainWindow(tk.Tk):
@@ -97,7 +97,7 @@ def main():
     app.mainloop()
 ```
 
-##### Display All Transactions Options
+#### Display All Transactions Options
 ![displayAll](images/displayAllTransactionsOptions.png)
 
 ![displayAllListbox](images/allTransactionsListbox.png)
@@ -130,7 +130,7 @@ class TransactionOptions(tk.Toplevel):
         self.destroy()
 ```
 
-##### Monthly Spendings Window (Selected from Main Window)
+#### Monthly Spendings Window (Selected from Main Window)
 ![monthlyWindow](images/monthlyWindow.png)
 
 ![monthlyPrompt](images/monthlyPromptWindow.png)
@@ -168,7 +168,7 @@ class MonthlySpendings(tk.Toplevel):
         self._functionsList[buttonOption](master, monthsDict, transactionsList, inputYear)
 ```
 
-##### Monthly Listbox + Graph
+#### Monthly Listbox + Graph
 ![monthlyListbox](images/monthlyListbox.png)
 
 ![monthlyGraph](images/monthlyGraphTJ.png)
